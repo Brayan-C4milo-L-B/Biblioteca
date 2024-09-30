@@ -12,9 +12,9 @@ public class Bibliotecario extends Persona {
     /*
      * Atributos de la clase
      */
-    private double salario;
-    private LocalDate fechaIngreso;
-    private Collection<Prestamo> prestamos;
+    public double salario;
+    public LocalDate fechaIngreso;
+    public Collection<Prestamo> prestamos;
 
     /*
      * Constructor de los atributos
