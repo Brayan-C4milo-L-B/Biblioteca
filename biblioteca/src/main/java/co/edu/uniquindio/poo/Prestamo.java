@@ -1,92 +1,144 @@
 package co.edu.uniquindio.poo;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.Collection;
 
+
 /*
- * Clase para crear condiciones en el prestamo de un libro
+    * Clase para crear condiciones en el prestamo de un libro
  */
 public class Prestamo {
 
+    /*
+     * Atributos de la clase
+     */
     public String codigo;
     public LocalDate fechaPrestamo, fechaEntrega;
     public double total;
-    public Bibliotecario bibliotecario;
-    public Estudiante estudiante;
-    public ArrayList<DetallePrestamo> detallePrestamos;
+    public Collection<Bibliotecario> bibliotecarios;
+    public Collection<Estudiante> estudiantes;
+    public Collection<DetallePrestamo> detallePrestamos;
 
+    /*
+     * Constructor con los atributos de la clase
+     */
     public Prestamo(String codigo, LocalDate fechaPrestamo, LocalDate fechaEntrega, double total,
-            Bibliotecario bibliotecario, Estudiante estudiante, ArrayList<DetallePrestamo> detallePrestamos) {
+            Collection<Bibliotecario> bibliotecarios, Collection<Estudiante> estudiantes,
+            Collection<DetallePrestamo> detallePrestamos) {
         this.codigo = codigo;
-        this.fechaEntrega = fechaEntrega;
         this.fechaPrestamo = fechaPrestamo;
+        this.fechaEntrega = fechaEntrega;
         this.total = total;
-        this.bibliotecario = bibliotecario;
-        this.estudiante = estudiante;
-        detallePrestamos = new ArrayList<DetallePrestamo>();
+        this.bibliotecarios = bibliotecarios;
+        this.estudiantes = estudiantes;
+        this.detallePrestamos = detallePrestamos;
     }
 
+    /*
+     * Metodo para obtener un dato
+     */
     public String getCodigo() {
         return codigo;
     }
 
+    /*
+     * Metodo para modificar un dato
+     */
     public void setCodigo(String codigo) {
         this.codigo = codigo;
     }
 
+    /*
+     * Metodo para obtener un dato
+     */
     public LocalDate getFechaPrestamo() {
         return fechaPrestamo;
     }
 
+    /*
+     * Metodo para modificar un dato
+     */
     public void setFechaPrestamo(LocalDate fechaPrestamo) {
         this.fechaPrestamo = fechaPrestamo;
     }
 
+    /*
+     * Metodo para obtener un dato
+     */
     public LocalDate getFechaEntrega() {
         return fechaEntrega;
     }
 
+    /*
+     * Metodo para modificar un dato
+     */
     public void setFechaEntrega(LocalDate fechaEntrega) {
         this.fechaEntrega = fechaEntrega;
     }
 
+    /*
+     * Metodo para obtener un dato
+     */
     public double getTotal() {
         return total;
     }
 
+    /*
+     * Metodo para modificar un dato
+     */
     public void setTotal(double total) {
         this.total = total;
     }
 
-    public Bibliotecario getBibliotecario() {
-        return bibliotecario;
+    /*
+     * Metodo para obtener un dato
+     */
+    public Collection<Bibliotecario> getBibliotecarios() {
+        return bibliotecarios;
     }
 
-    public void setBibliotecario(Bibliotecario bibliotecario) {
-        this.bibliotecario = bibliotecario;
+    /*
+     * Metodo para modificar un dato
+     */
+    public void setBibliotecarios(Collection<Bibliotecario> bibliotecarios) {
+        this.bibliotecarios = bibliotecarios;
     }
 
-    public Estudiante getEstudiante() {
-        return estudiante;
+    /*
+     * Metodo para obtener un dato
+     */
+    public Collection<Estudiante> getEstudiantes() {
+        return estudiantes;
     }
 
-    public void setEstudiante(Estudiante estudiante) {
-        this.estudiante = estudiante;
+    /*
+     * Metodo para modificar un dato
+     */
+    public void setEstudiantes(Collection<Estudiante> estudiantes) {
+        this.estudiantes = estudiantes;
     }
 
+    /*
+     * Metodo para obtener un dato
+     */
     public Collection<DetallePrestamo> getDetallePrestamos() {
         return detallePrestamos;
     }
 
-    public void setDetallePrestamos(ArrayList<DetallePrestamo> detallePrestamos) {
+    /*
+     * Metodo para modificar un dato
+     */
+    public void setDetallePrestamos(Collection<DetallePrestamo> detallePrestamos) {
         this.detallePrestamos = detallePrestamos;
     }
 
+    /*
+     * Constructor con el toString
+     */
     @Override
     public String toString() {
         return "Prestamo [codigo=" + codigo + ", fechaPrestamo=" + fechaPrestamo + ", fechaEntrega=" + fechaEntrega
-                + ", total=" + total + ", bibliotecario=" + bibliotecario + ", estudiante=" + estudiante
+                + ", total=" + total + ", bibliotecarios=" + bibliotecarios + ", estudiantes=" + estudiantes
                 + ", detallePrestamos=" + detallePrestamos + "]";
     }
 
