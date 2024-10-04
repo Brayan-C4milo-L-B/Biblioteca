@@ -247,9 +247,7 @@ public class Biblioteca {
     }
 
     /*
-     * Metodo para contar los libros con el mismo nombre
-     */
-    public int contarLibros(Libro libro, String titulo) {
+     *public int contarLibros(Libro libro, String titulo) {
         int contador = 0;
         for (int i = 0; i >= 0; i++) {
             if (libro.getTitulo().equals(titulo) == libro.getTitulo().equals(titulo)) {
@@ -258,26 +256,27 @@ public class Biblioteca {
             }
         }
         return contador;
-    }
-
-    /*
-     * public int contarLibros(Libro libro) {
+    } 
+     */
+ /*
+     * Metodo para contar los libros con el mismo nombre
+     */
+    public int contarLibros(Libro libro, String titulo) {
         int contador = 0;
         for (int i = 0; i >= 0; i++) {
-            for (int j =0; j <= i; j--){
-                if (libro.getTitulo() == libro.getTitulo()) {
+            for (int j = 0; j <= i; j--) {
+                if (libro.getTitulo().equals(titulo) == libro.getTitulo().equals(titulo)) {
                     contador++;
                     break;
-    
-            }
-            
+
+                }
+
             }
         }
         return contador;
     }
-     */
 
- /*
+    /*
      * Metodo para calcular el acumulado con el contador
      */
     public double sumaLibros(int contador) {
@@ -294,7 +293,7 @@ public class Biblioteca {
     /*
      * Metodo para consultar libros por codigo
      */
-    public boolean consultarLibroPorCodigo(int codigo) {
+    public boolean consultarLibroPorCodigo(Collection<Libro> libros, int codigo) {
         boolean centinela = false;
         for (Libro libro : libros) {
             if (libro.getCodigo() == codigo) {
@@ -313,6 +312,22 @@ public class Biblioteca {
             total += detallePrestamo.getSubTotal();
         }
         return total;
+    }
+
+    /*
+     * Metodo para reemplazar libros con un ciclo
+     * 
+     */
+    public boolean reemplazarLibro(Collection<Libro> libros, String tituloViejo, Libro nuevoLibro) {
+        boolean centinela = false;
+        for (Libro libro : libros) {
+            if (libro.getTitulo().equals(tituloViejo)) {
+                libros.remove(libro);
+                libros.add(nuevoLibro);
+                centinela = true;
+            }
+        }
+        return centinela;
     }
 
 }

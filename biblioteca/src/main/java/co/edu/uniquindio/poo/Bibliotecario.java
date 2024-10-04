@@ -117,16 +117,4 @@ public class Bibliotecario extends Persona {
         double bonificacion = calcularBonificacion(valorPrestamos);
         return porcentajePrestamo + bonificacion;
     }
-
-    public void crearPrestamo(Collection<Libro> libros) {
-
-    }
-
-    public void adicionarPrestamo() {
-
-    }
-
-    public void entregarPrestamo() {
-
-    }
 }
